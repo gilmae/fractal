@@ -1,10 +1,17 @@
 package fractal
 
 type Point struct {
-	C complex128
-	X int
-	Y int
-	Escape float64
-	FinalZ complex128
+	C       BigComplex
+	X       int
+	Y       int
+	Escape  float64
+	FinalZ  BigComplex
 	Escaped bool
- }
+}
+
+type CalculatedPoint struct {
+	X       int
+	Y       int
+	Escape  float64
+	Escaped bool
+}
