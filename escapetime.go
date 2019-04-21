@@ -1,7 +1,6 @@
 package fractal
 
 import (
-	"fmt"
 	mbig "math/big"
 	"sync"
 
@@ -64,7 +63,6 @@ func Escape_Time_Calculator(base Base, midX float64, midY float64, zoom float64,
 
 	go func(points <-chan CalculatedPoint, hash map[Key]CalculatedPoint) {
 		for p := range points {
-			fmt.Printf("%d\n", p.X)
 			hash[Key{p.X, p.Y}] = p
 		}
 	}(calculatedChan, points_map)
